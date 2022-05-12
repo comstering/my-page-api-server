@@ -35,10 +35,9 @@ class ProjectControllerTests {
             .andExpect {
                 status { isOk() }
                 content { contentType(MediaType.APPLICATION_JSON) }
-                jsonPath("$.title") { "test1" }
+                jsonPath("$.title") { value("test") }
             }.andDo {
                 print()
             }
-
     }
 }
