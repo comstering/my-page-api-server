@@ -17,14 +17,9 @@ import lombok.Data
 @Data
 @DynamicInsert
 @DynamicUpdate
-class Project {
+class Project(@Column(nullable = false) var title: String,
+              @Column(nullable = false) var description: String) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private var id: Long? = null
-
-    @Column(nullable = false)
-    private var title: String? = null
-
-    @Column(nullable = false)
-    private var description: String? = null
+    var id: Long? = null
 }
